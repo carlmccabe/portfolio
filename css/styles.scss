@@ -1,0 +1,160 @@
+/* Color Theme Swatches in RGBA */
+$color1: rgba(22, 34, 38, 1);
+$color2: rgba(52, 82, 89, 1);
+$color3: rgba(217, 158, 106, 1);
+$color4: rgba(217, 201, 186, 1);
+$color5: rgba(191, 127, 90, 1);
+
+/* Color Theme Swatches in Hex */
+$black-and-white-device-electronics-698808-1-hex: #a6a6a6;
+$black-and-white-device-electronics-698808-2-hex: #8c8c8c;
+$black-and-white-device-electronics-698808-3-hex: #595959;
+$black-and-white-device-electronics-698808-4-hex: #262626;
+$black-and-white-device-electronics-698808-5-hex: #0d0d0d;
+
+/* Color Theme Swatches in RGBA */
+$lightest: rgb(212, 212, 212);
+$lighter: rgba(166, 166, 166, 1);
+$light: rgba(140, 140, 140, 1);
+$mid: rgba(89, 89, 89, 1);
+$dark: rgba(38, 38, 38, 1);
+$darker: rgba(13, 13, 13, 1);
+$darkest: rgba(0, 0, 0, 0.4);
+
+/* Color Theme Swatches in HSLA */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500|Playfair+Display:700");
+$primary-font: "Montserrat", sans-serif;
+$secondary-font: "Playfair Display", serif;
+
+body {
+  margin: 0;
+  color: $lightest;
+  font-family: $primary-font;
+  background-color: $darkest;
+}
+// Nav styles
+header {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+nav {
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: none;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  }
+  a {
+    color: $lightest;
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    &:hover {
+      color: #0d0d0d;
+    }
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  position: absolute;
+
+  top: 40px;
+}
+.nav-toggle:checked ~ nav {
+  display: block;
+  background-color: $darker;
+  height: 50vh;
+}
+.nav-toggle:checked {
+  .nav-toggle-label {
+    color: #0d0d0d;
+  }
+}
+.social {
+  color: $lightest;
+}
+
+// hero section
+
+.hero {
+  height: 100vh;
+  background-image: url(https://images.pexels.com/photos/698808/pexels-photo-698808.jpeg);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#hero-text {
+  display: flex;
+  justify-content: center;
+}
+
+#hi {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: center;
+}
+#name {
+  font-family: $primary-font;
+  display: inline-block;
+  margin: auto;
+  #name-text {
+    margin: 0;
+    display: inline-block;
+    overflow: hidden;
+    width: 0%;
+    letter-spacing: 2px;
+    animation: typing 1s steps(8, end) 3s forwards,
+      blink 0.75s step-end infinite;
+    white-space: nowrap;
+    font-size: 4rem;
+    font-weight: 700;
+    border-right: 4px solid blue;
+    box-sizing: border-box;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: blue;
+  }
+}

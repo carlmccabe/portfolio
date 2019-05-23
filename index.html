@@ -4,9 +4,67 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
     <title>Carl McCabe</title>
   </head>
   <body>
-    <H1>Test!</H1>
+    <header>
+      <a class="logo" href="#">Carl</a>
+      <input type="checkbox" class="nav-toggle" id="nav-toggle" />
+      <nav>
+        <label for="nav-toggle">X</label>
+        <ul>
+          <li><a href="#about" class="nav-item">About</a></li>
+          <li><a href="#projects" class="nav-item">Projects</a></li>
+          <li>
+            <div id="socials">
+              <!-- <a href="" class="social"><i class="fab fa-dribbble-square"></i></a> -->
+              <a href="https://www.linkedin.com/in/carl-mccabe/" class="social"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://www.instagram.com/carl.l.mccabe/" class="social"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://twitter.com/BlackBeanTacos" class="social"
+                ><i class="fab fa-twitter-square"></i
+              ></a>
+              <a href="https://github.com/carlmccabe" class="social"
+                ><i class="fab fa-github-square"></i
+              ></a>
+              <!-- <a href="" class="social"><i class="fab fa-medium"></i></a> -->
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span><i class="fas fa-caret-square-down"></i></span>
+      </label>
+    </header>
+    <section class="hero">
+      <div id="hi">
+        <div id="hello">
+          <h2>Hi!</h2>
+        </div>
+        <div id="name">
+          <h1 id="name-text">I'm Carl</h1>
+        </div>
+      </div>
+      <footer class="hero-footer">
+        <a class="button button-primary" href="#">button one</a>
+        <a class="button" href="#">button two</a>
+      </footer>
+    </section>
+    <section id="about">
+      <H1>about</H1>
+    </section>
+    <section id="projects">
+      <h1>Projects</h1>
+    </section>
   </body>
 </html>
