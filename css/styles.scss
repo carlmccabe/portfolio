@@ -49,7 +49,10 @@ nav {
   top: 100%;
   left: 0;
   width: 100%;
-  display: none;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+  background-color: $darkest;
   ul {
     margin: 0;
     padding: 0;
@@ -65,7 +68,7 @@ nav {
     font-size: 2rem;
     text-transform: uppercase;
     &:hover {
-      color: #0d0d0d;
+      color: $light;
     }
   }
 }
@@ -80,19 +83,20 @@ nav {
 }
 .nav-toggle-label {
   position: absolute;
-
   top: 40px;
-}
-.nav-toggle:checked ~ nav {
-  display: block;
-  background-color: $darker;
-  height: 50vh;
-}
-.nav-toggle:checked {
-  .nav-toggle-label {
-    color: #0d0d0d;
+  &:hover {
+    cursor: pointer;
   }
 }
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+  background-color: $darker;
+  height: 25vh;
+}
+.nav-toggle:checked ~ .nav-toggle-label {
+  display: none;
+}
+
 .social {
   color: $lightest;
 }
@@ -121,6 +125,7 @@ nav {
   flex-direction: column;
   justify-items: center;
   align-content: center;
+  animation: flash linear 1.5s 2;
 }
 #name {
   font-family: $primary-font;
@@ -139,6 +144,26 @@ nav {
     font-weight: 700;
     border-right: 4px solid blue;
     box-sizing: border-box;
+  }
+}
+
+// animations
+
+@keyframes flash {
+  0% {
+    font-size: 0.5rem;
+  }
+  25% {
+    font-size: 1rem;
+  }
+  50% {
+    font-size: 2rem;
+  }
+  75% {
+    font-size: 1rem;
+  }
+  100% {
+    font-size: 0.5rem;
   }
 }
 @keyframes typing {

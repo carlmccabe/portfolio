@@ -26,7 +26,15 @@ nav {
   top: 100%;
   left: 0;
   width: 100%;
-  display: none;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 nav ul {
@@ -48,7 +56,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #0d0d0d;
+  color: #8c8c8c;
 }
 
 .logo {
@@ -66,14 +74,19 @@ nav a:hover {
   top: 40px;
 }
 
-.nav-toggle:checked ~ nav {
-  display: block;
-  background-color: #0d0d0d;
-  height: 50vh;
+.nav-toggle-label:hover {
+  cursor: pointer;
 }
 
-.nav-toggle:checked .nav-toggle-label {
-  color: #0d0d0d;
+.nav-toggle:checked ~ nav {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  background-color: #0d0d0d;
+  height: 25vh;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label {
+  display: none;
 }
 
 .social {
@@ -120,6 +133,8 @@ nav a:hover {
   justify-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  -webkit-animation: flash linear 1.5s 2;
+          animation: flash linear 1.5s 2;
 }
 
 #name {
@@ -142,6 +157,42 @@ nav a:hover {
   border-right: 4px solid blue;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    font-size: 0.5rem;
+  }
+  25% {
+    font-size: 1rem;
+  }
+  50% {
+    font-size: 2rem;
+  }
+  75% {
+    font-size: 1rem;
+  }
+  100% {
+    font-size: 0.5rem;
+  }
+}
+
+@keyframes flash {
+  0% {
+    font-size: 0.5rem;
+  }
+  25% {
+    font-size: 1rem;
+  }
+  50% {
+    font-size: 2rem;
+  }
+  75% {
+    font-size: 1rem;
+  }
+  100% {
+    font-size: 0.5rem;
+  }
 }
 
 @-webkit-keyframes typing {
