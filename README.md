@@ -1,6 +1,6 @@
 # Portfolio
 
-# My [Portfolio](https://carlmc.com)
+My [Portfolio](https://carlmc.com)
 
 ## The [Github repo](https://github.com/carlmccabe/portfolio)
 
@@ -10,15 +10,15 @@ Purpose
 
 ## Functionality / features
 
-### Nav
+- Nav
 
-### Hero
+- Hero
 
-### about
+- About
 
-### Timeline
+- Timeline
 
-### Projects
+- Projects
 
 ## Screenshots
 
@@ -44,6 +44,8 @@ Screenshots of Trello board(s)
 # Short Answer Q&A - Include short answers to the following questions,
 
 ## Describe key events in the development of the internet from the 1980s to today (max. 150 words)
+
+In 1962, J.C.R Licklider proposed the idea of computers talking to each other, which in 1969, ARPANET was able to achieve by sending a message between two computers on America’s west coast, which, by the end of the year, had a total of 4 computers on the network. By 1971, the framework for today’s internet had been conceptualised by Ryan Tomlinson(email) and Vinton Cerf(TCP/IP), which scientist used in the 1980’s to send data. The World Wide Web was invented in 1991 by Tim Berners Lee which opened up the internet to the general population. Browser became popular for users to surf the web starting with Erwise, being the first commonly available, and Mosaic, being the more popular of the early graphical browsers. Netscape released in 1994 took over as the most used browser. The early 90s was mostly dial-up, then faster connections were introduced such as cable, DSL, WiFi and mobile.
 
 ## Define and describes the relationship between fundamental aspects of the internet such as: domains, web servers, DNS, and web browsers (max. 150 words)
 
