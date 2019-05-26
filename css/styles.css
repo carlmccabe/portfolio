@@ -155,8 +155,86 @@ nav a:hover {
           box-sizing: border-box;
 }
 
-.about {
+#about {
   background: #0d0d0d;
+}
+
+#about h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.text_1 {
+  -webkit-animation: text1;
+          animation: text1;
+}
+
+.text_2 {
+  -webkit-animation: text2;
+          animation: text2;
+}
+
+.text_3 {
+  -webkit-animation: text3;
+          animation: text3;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.text_4 {
+  -webkit-animation: text4;
+          animation: text4;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+
+.text_5 {
+  -webkit-animation: text5;
+          animation: text5;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.text_6 {
+  -webkit-animation: text6;
+          animation: text6;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.text_1,
+.text_2,
+.text_3,
+.text_4,
+.text_5,
+.text_6 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-timing-function: steps(12, end);
+          animation-timing-function: steps(12, end);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.text_1::after,
+.text_2::after,
+.text_3::after,
+.text_4::after,
+.text_5::after,
+.text_6::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  -webkit-animation: caret infinite;
+          animation: caret infinite;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: steps(1, end);
+          animation-timing-function: steps(1, end);
 }
 
 .timeline-title {
@@ -325,6 +403,170 @@ nav a:hover {
   }
   50% {
     border-color: blue;
+  }
+}
+
+@-webkit-keyframes text1 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  10%,
+  40% {
+    width: 5.8em;
+  }
+}
+
+@keyframes text1 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  10%,
+  40% {
+    width: 5.8em;
+  }
+}
+
+@-webkit-keyframes text2 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  60%,
+  90% {
+    width: 4em;
+  }
+}
+
+@keyframes text2 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  60%,
+  90% {
+    width: 4em;
+  }
+}
+
+@-webkit-keyframes text3 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  10%,
+  40% {
+    width: 7.4em;
+  }
+}
+
+@keyframes text3 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  10%,
+  40% {
+    width: 7.4em;
+  }
+}
+
+@-webkit-keyframes text4 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  60%,
+  90% {
+    width: 6em;
+  }
+}
+
+@keyframes text4 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  60%,
+  90% {
+    width: 6em;
+  }
+}
+
+@-webkit-keyframes text5 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  10%,
+  40% {
+    width: 9.5em;
+  }
+}
+
+@keyframes text5 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  10%,
+  40% {
+    width: 9.5em;
+  }
+}
+
+@-webkit-keyframes text6 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  60%,
+  90% {
+    width: 9em;
+  }
+}
+
+@keyframes text6 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  60%,
+  90% {
+    width: 9em;
+  }
+}
+
+@-webkit-keyframes caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=styles.css.map */

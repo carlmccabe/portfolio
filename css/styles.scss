@@ -149,8 +149,66 @@ nav {
   }
 }
 // about
-.about {
+#about {
   background: $darker;
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+.text_1 {
+  animation: text1;
+}
+
+.text_2 {
+  animation: text2;
+}
+.text_3 {
+  animation: text3;
+  animation-delay: 500ms;
+}
+
+.text_4 {
+  animation: text4;
+  animation-delay: 500ms;
+}
+.text_5 {
+  animation: text5;
+  animation-delay: 1s;
+}
+
+.text_6 {
+  animation: text6;
+  animation-delay: 1s;
+}
+
+.text_1,
+.text_2,
+.text_3,
+.text_4,
+.text_5,
+.text_6 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  animation-duration: 10s;
+  animation-timing-function: steps(12, end);
+  animation-iteration-count: infinite;
+}
+
+.text_1::after,
+.text_2::after,
+.text_3::after,
+.text_4::after,
+.text_5::after,
+.text_6::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
 }
 
 // Timeline
@@ -270,5 +328,87 @@ nav {
   }
   50% {
     border-color: blue;
+  }
+}
+
+@keyframes text1 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  10%,
+  40% {
+    width: 5.8em;
+  }
+}
+@keyframes text2 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+
+  60%,
+  90% {
+    width: 4em;
+  }
+}
+
+@keyframes text3 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  10%,
+  40% {
+    width: 7.4em;
+  }
+}
+@keyframes text4 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+
+  60%,
+  90% {
+    width: 6em;
+  }
+}
+
+@keyframes text5 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+  10%,
+  40% {
+    width: 9.5em;
+  }
+}
+@keyframes text6 {
+  0%,
+  50%,
+  100% {
+    width: 0;
+  }
+
+  60%,
+  90% {
+    width: 9em;
+  }
+}
+
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
