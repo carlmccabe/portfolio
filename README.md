@@ -1,36 +1,53 @@
-# portfolio
+# Portfolio
 
-#My [Portfolio](https://carlmc.com)
-##The [Github repo](https://github.com/carlmccabe/portfolio)
+# My [Portfolio](https://carlmc.com)
 
-##Description of your portfolio website, including,
+## The [Github repo](https://github.com/carlmccabe/portfolio)
+
+## Description of your portfolio website, including,
+
 Purpose
 
-##Functionality / features
-###Nav
-###Hero
-###about
-###Timeline
-###Projects
-##Screenshots
+## Functionality / features
 
-##Target audience
+### Nav
+
+### Hero
+
+### about
+
+### Timeline
+
+### Projects
+
+## Screenshots
+
+## Target audience
+
 Employers
-##Tech stack (e.g. html, css, deployment platform, etc)
+
+## Tech stack (e.g. html, css, deployment platform, etc)
+
 Html, css, sass, github server, GoDaddy
-##Design
+
+## Design
+
 moodboard
 notebook
-##Personal logo (optional)
 
-##Project plan & timeline
+## Personal logo (optional)
+
+## Project plan & timeline
+
 Screenshots of Trello board(s)
-#Short Answer Q&A - Include short answers to the following questions,
-##Describe key events in the development of the internet from the 1980s to today (max. 150 words)
 
-##Define and describes the relationship between fundamental aspects of the internet such as: domains, web servers, DNS, and web browsers (max. 150 words)
+# Short Answer Q&A - Include short answers to the following questions,
 
-##Reflect on one aspect of the development of internet technologies and how it has contributed to the world today (max. 150 words)
+## Describe key events in the development of the internet from the 1980s to today (max. 150 words)
+
+## Define and describes the relationship between fundamental aspects of the internet such as: domains, web servers, DNS, and web browsers (max. 150 words)
+
+## Reflect on one aspect of the development of internet technologies and how it has contributed to the world today (max. 150 words)
 
 #Resources
 animate.css
