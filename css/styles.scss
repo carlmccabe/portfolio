@@ -5,7 +5,8 @@ $light: rgba(140, 140, 140, 1);
 $mid: rgba(89, 89, 89, 1);
 $dark: rgba(38, 38, 38, 1);
 $darker: rgba(13, 13, 13, 1);
-$darkest: rgba(0, 0, 0, 0.4);
+$darkalpha: rgba(0, 0, 0, 0.4);
+$darkest: rgba(0, 0, 0, 1);
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500|Playfair+Display:700");
 $primary-font: "Montserrat", sans-serif;
@@ -13,14 +14,15 @@ $secondary-font: "Playfair Display", serif;
 
 body {
   margin: 0;
+  padding: 0;
   color: $lightest;
   font-family: $primary-font;
-  background-color: $darkest;
+  background-color: $darker;
 }
 // Nav styles
 header {
-  display: grid;
-  place-items: center;
+  // display: grid;
+  // place-items: center;
   text-align: center;
   position: fixed;
   z-index: 999;
@@ -89,6 +91,19 @@ nav {
   color: $lightest;
 }
 
+// @media screen and (min-width: 800px) {
+//   .nav-toggle-label {
+//     display: none;
+//   }
+//   header {
+//     display: grid;
+//     grid-template-columns: 1fr auto minmax(600px, 1fr);
+//   }
+//   .logo {
+//     grid-column: 2 / 3;
+//   }
+// }
+
 // hero section
 
 .hero {
@@ -108,7 +123,7 @@ nav {
   flex-direction: column;
   justify-items: center;
   align-content: center;
-  background-color: $darkest;
+  background-color: $darkalpha;
   border-radius: 5px;
   shado #hello {
     animation: flash linear 1.5s 2;
@@ -133,10 +148,91 @@ nav {
     }
   }
 }
+// about
+.about {
+  background: $darker;
+}
 
-@media screen and (min-width: 800px) {
-  .nav-toggle-label {
-    display: none;
+// Timeline
+.timeline-title {
+  background: $darkest;
+  font-family: $primary-font;
+}
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 40px 0;
+  width: auto;
+  background: $darkest;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: $mid;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      line-height: normal;
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      .time {
+        margin: 0;
+        padding: 2px 16px;
+        background: rebeccapurple;
+        color: white;
+        border-radius: 20px;
+      }
+      &:nth-child(odd) {
+        float: left;
+        text-align: right;
+        clear: both;
+        .time {
+          position: absolute;
+          top: 0;
+          right: -165px;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 24px;
+          right: -6px;
+          width: 10px;
+          height: 10px;
+          background: $light;
+          border-radius: 50%;
+          box-shadow: 0 0 0 5px white;
+        }
+      }
+      &:nth-child(even) {
+        float: right;
+        text-align: left;
+        clear: both;
+        .time {
+          position: absolute;
+          top: 0;
+          left: -165px;
+        }
+        //  Timeline indicator
+        &::before {
+          content: "";
+          position: absolute;
+          top: 24px;
+          left: -4px;
+          width: 10px;
+          height: 10px;
+          background: $light;
+          border-radius: 50%;
+          box-shadow: 0 0 0 5px white;
+        }
+      }
+    }
   }
 }
 

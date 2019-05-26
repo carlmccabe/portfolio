@@ -2,15 +2,13 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500|Playfair+Display:700");
 body {
   margin: 0;
+  padding: 0;
   color: #d4d4d4;
   font-family: "Montserrat", sans-serif;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #0d0d0d;
 }
 
 header {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
   text-align: center;
   position: fixed;
   z-index: 999;
@@ -31,7 +29,7 @@ nav {
   transition: -webkit-transform 400ms ease-in-out;
   transition: transform 400ms ease-in-out;
   transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: black;
 }
 
 nav ul {
@@ -157,10 +155,103 @@ nav a:hover {
           box-sizing: border-box;
 }
 
-@media screen and (min-width: 800px) {
-  .nav-toggle-label {
-    display: none;
-  }
+.about {
+  background: #0d0d0d;
+}
+
+.timeline-title {
+  background: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 40px 0;
+  width: auto;
+  background: black;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #595959;
+}
+
+.timeline ul {
+  margin: 0;
+  padding: 0;
+}
+
+.timeline ul li {
+  list-style: none;
+  line-height: normal;
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.timeline ul li .time {
+  margin: 0;
+  padding: 2px 16px;
+  background: rebeccapurple;
+  color: white;
+  border-radius: 20px;
+}
+
+.timeline ul li:nth-child(odd) {
+  float: left;
+  text-align: right;
+  clear: both;
+}
+
+.timeline ul li:nth-child(odd) .time {
+  position: absolute;
+  top: 0;
+  right: -165px;
+}
+
+.timeline ul li:nth-child(odd)::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: -6px;
+  width: 10px;
+  height: 10px;
+  background: #8c8c8c;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 5px white;
+          box-shadow: 0 0 0 5px white;
+}
+
+.timeline ul li:nth-child(even) {
+  float: right;
+  text-align: left;
+  clear: both;
+}
+
+.timeline ul li:nth-child(even) .time {
+  position: absolute;
+  top: 0;
+  left: -165px;
+}
+
+.timeline ul li:nth-child(even)::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  background: #8c8c8c;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 5px white;
+          box-shadow: 0 0 0 5px white;
 }
 
 @-webkit-keyframes flash {
