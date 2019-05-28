@@ -5,12 +5,21 @@ $light: rgba(140, 140, 140, 1);
 $mid: rgba(89, 89, 89, 1);
 $dark: rgba(38, 38, 38, 1);
 $darker: rgba(13, 13, 13, 1);
-$darkalpha: rgba(0, 0, 0, 0.4);
+$darkalpha: rgba(0, 0, 0, 0.2);
 $darkest: rgba(0, 0, 0, 1);
+$highlight: rebeccapurple;
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500|Playfair+Display:700");
 $primary-font: "Montserrat", sans-serif;
 $secondary-font: "Playfair Display", serif;
+
+@mixin navbutton {
+  box-shadow: 0px 10px 10px 0 rgba(0, 0, 255, 0.3);
+  &:hover {
+    color: $light;
+    box-shadow: 0 10px 7px 0 rgba(0, 0, 255, 0.4);
+  }
+}
 
 body {
   margin: 0;
@@ -21,8 +30,6 @@ body {
 }
 // Nav styles
 header {
-  // display: grid;
-  // place-items: center;
   text-align: center;
   position: fixed;
   z-index: 999;
@@ -49,13 +56,17 @@ nav {
     margin-left: 1em;
   }
   a {
+    position: relative;
+    top: 30px;
     color: $lightest;
     text-decoration: none;
     font-size: 2rem;
     text-transform: uppercase;
-    &:hover {
-      color: $light;
+    background: $darkest;
+    social: {
+      font-size: 3rem;
     }
+    @include navbutton;
   }
 }
 
@@ -80,8 +91,13 @@ nav {
 }
 .nav-toggle:checked ~ nav {
   transform: scale(1, 1);
-  background-color: $darker;
-  height: 25vh;
+  label {
+    cursor: pointer;
+  }
+  ul {
+    background-color: $darker;
+    height: 35vh;
+  }
 }
 .nav-toggle:checked ~ .nav-toggle-label {
   display: none;
@@ -91,18 +107,40 @@ nav {
   color: $lightest;
 }
 
-// @media screen and (min-width: 800px) {
-//   .nav-toggle-label {
-//     display: none;
-//   }
-//   header {
-//     display: grid;
-//     grid-template-columns: 1fr auto minmax(600px, 1fr);
-//   }
-//   .logo {
-//     grid-column: 2 / 3;
-//   }
-// }
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(700px, 1fr) 1fr;
+  }
+  .logo {
+    grid-column: 2 / 3;
+  }
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    label {
+      display: none;
+    }
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      .socials {
+        // position: fixed;
+        top: 10px;
+      }
+    }
+    a {
+      opacity: 1;
+      font-size: 1.5rem;
+    }
+  }
+}
 
 // hero section
 
@@ -151,9 +189,13 @@ nav {
 // about
 #about {
   background: $darker;
+  height: 100vh;
+  display: grid;
+  align-items: center;
   h1 {
     text-align: center;
     font-size: 2rem;
+    color: $lightest;
   }
 }
 .text_1 {
@@ -212,15 +254,18 @@ nav {
 }
 
 // Timeline
-.timeline-title {
+.title {
   background: $darkest;
   font-family: $primary-font;
+  text-align: center;
+  padding-top: 50px;
 }
+$time: 50px;
 .timeline {
   position: relative;
   margin: 50px auto;
   padding: 40px 0;
-  width: auto;
+  width: 1000px;
   background: $darkest;
   &::before {
     content: "";
@@ -242,10 +287,10 @@ nav {
       box-sizing: border-box;
       .time {
         margin: 0;
-        padding: 2px 16px;
-        background: rebeccapurple;
+        padding: 2px 10px;
+        background: $highlight;
         color: white;
-        border-radius: 20px;
+        border-radius: 30px;
       }
       &:nth-child(odd) {
         float: left;
@@ -253,7 +298,7 @@ nav {
         clear: both;
         .time {
           position: absolute;
-          top: 0;
+          top: $time;
           right: -165px;
         }
         &::before {
@@ -274,7 +319,7 @@ nav {
         clear: both;
         .time {
           position: absolute;
-          top: 0;
+          top: $time;
           left: -165px;
         }
         //  Timeline indicator
@@ -290,6 +335,47 @@ nav {
           box-shadow: 0 0 0 5px white;
         }
       }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .timeline {
+    width: 100%;
+    &::before {
+      left: 20px;
+    }
+    ul {
+      li:nth-child(odd),
+      li:nth-child(even) {
+        width: 100%;
+        text-align: left;
+        padding-bottom: 50px;
+        margin-bottom: 20px;
+        .time {
+          left: 50px;
+          right: auto;
+          top: 120px;
+        }
+        &::before {
+          top: 18px;
+          left: 16px;
+        }
+      }
+    }
+  }
+}
+//projects
+#projects {
+  height: 50vh;
+  h1 {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #projects {
+    h1 {
+      text-align: center;
     }
   }
 }
@@ -330,7 +416,6 @@ nav {
     border-color: blue;
   }
 }
-
 @keyframes text1 {
   0%,
   50%,
@@ -354,7 +439,6 @@ nav {
     width: 4em;
   }
 }
-
 @keyframes text3 {
   0%,
   50%,
@@ -378,7 +462,6 @@ nav {
     width: 6em;
   }
 }
-
 @keyframes text5 {
   0%,
   50%,
@@ -402,7 +485,6 @@ nav {
     width: 9em;
   }
 }
-
 @keyframes caret {
   0%,
   100% {

@@ -44,14 +44,22 @@ nav li {
 }
 
 nav a {
+  position: relative;
+  top: 30px;
   color: #d4d4d4;
   text-decoration: none;
   font-size: 2rem;
   text-transform: uppercase;
+  background: black;
+  social-font-size: 3rem;
+  -webkit-box-shadow: 0px 10px 10px 0 rgba(0, 0, 255, 0.3);
+          box-shadow: 0px 10px 10px 0 rgba(0, 0, 255, 0.3);
 }
 
 nav a:hover {
   color: #8c8c8c;
+  -webkit-box-shadow: 0 10px 7px 0 rgba(0, 0, 255, 0.4);
+          box-shadow: 0 10px 7px 0 rgba(0, 0, 255, 0.4);
 }
 
 .logo {
@@ -81,8 +89,15 @@ nav a:hover {
 .nav-toggle:checked ~ nav {
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav label {
+  cursor: pointer;
+}
+
+.nav-toggle:checked ~ nav ul {
   background-color: #0d0d0d;
-  height: 25vh;
+  height: 35vh;
 }
 
 .nav-toggle:checked ~ .nav-toggle-label {
@@ -91,6 +106,56 @@ nav a:hover {
 
 .social {
   color: #d4d4d4;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+  header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr auto minmax(700px, 1fr) 1fr;
+        grid-template-columns: 1fr auto minmax(700px, 1fr) 1fr;
+  }
+  .logo {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+  }
+  nav {
+    all: unset;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  nav label {
+    display: none;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  nav ul .socials {
+    top: 10px;
+  }
+  nav a {
+    opacity: 1;
+    font-size: 1.5rem;
+  }
 }
 
 .hero {
@@ -124,7 +189,7 @@ nav a:hover {
   justify-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
 
@@ -157,11 +222,18 @@ nav a:hover {
 
 #about {
   background: #0d0d0d;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #about h1 {
   text-align: center;
   font-size: 2rem;
+  color: #d4d4d4;
 }
 
 .text_1 {
@@ -237,16 +309,18 @@ nav a:hover {
           animation-timing-function: steps(1, end);
 }
 
-.timeline-title {
+.title {
   background: black;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
+  padding-top: 50px;
 }
 
 .timeline {
   position: relative;
   margin: 50px auto;
   padding: 40px 0;
-  width: auto;
+  width: 1000px;
   background: black;
 }
 
@@ -276,10 +350,10 @@ nav a:hover {
 
 .timeline ul li .time {
   margin: 0;
-  padding: 2px 16px;
+  padding: 2px 10px;
   background: rebeccapurple;
   color: white;
-  border-radius: 20px;
+  border-radius: 30px;
 }
 
 .timeline ul li:nth-child(odd) {
@@ -290,7 +364,7 @@ nav a:hover {
 
 .timeline ul li:nth-child(odd) .time {
   position: absolute;
-  top: 0;
+  top: 50px;
   right: -165px;
 }
 
@@ -315,7 +389,7 @@ nav a:hover {
 
 .timeline ul li:nth-child(even) .time {
   position: absolute;
-  top: 0;
+  top: 50px;
   left: -165px;
 }
 
@@ -330,6 +404,47 @@ nav a:hover {
   border-radius: 50%;
   -webkit-box-shadow: 0 0 0 5px white;
           box-shadow: 0 0 0 5px white;
+}
+
+@media (max-width: 800px) {
+  .timeline {
+    width: 100%;
+  }
+  .timeline::before {
+    left: 20px;
+  }
+  .timeline ul li:nth-child(odd),
+  .timeline ul li:nth-child(even) {
+    width: 100%;
+    text-align: left;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+  }
+  .timeline ul li:nth-child(odd) .time,
+  .timeline ul li:nth-child(even) .time {
+    left: 50px;
+    right: auto;
+    top: 120px;
+  }
+  .timeline ul li:nth-child(odd)::before,
+  .timeline ul li:nth-child(even)::before {
+    top: 18px;
+    left: 16px;
+  }
+}
+
+#projects {
+  height: 50vh;
+}
+
+#projects h1 {
+  text-align: left;
+}
+
+@media screen and (min-width: 800px) {
+  #projects h1 {
+    text-align: center;
+  }
 }
 
 @-webkit-keyframes flash {
